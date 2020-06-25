@@ -1,0 +1,31 @@
+[user]
+  name = Aaron Schneiderwind
+  email = aaronschneiderwind@protonmail.com
+  username = scuzie
+  signingkey = 5D6049125612B576
+
+[commit]
+  gpgsign = true
+
+[color]
+  ui = auto
+  interactive = always
+  grep = always
+  showbranch = always
+
+[core]
+  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='DarkNeon'
+  ignorecase = false
+  autocrlf = false
+  safecrlf = false
+  eol = native
+  editor = nvim
+
+[interactive]
+  diffFilter = delta --color-only
+
+[fetch]
+  prune = true
+
+[protocol]
+  version = 2

@@ -1,0 +1,15 @@
+# set darkneon theme
+--theme="DarkNeon"
+
+# show line numbers, git modifications and file header
+--style="numbers,changes,header"
+
+# Add mouse scrolling support in less
+--pager="less -FR"
+
+# use cpp syntax for .ino files
+--map-syntax "*.ino:C++"
+
+# use .gitignore highlighting for .ignore files
+--map-syntax ".dockerignore:Git Ignore"
+--map-syntax ".ignore:Git Ignore"

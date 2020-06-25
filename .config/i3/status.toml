@@ -1,0 +1,64 @@
+[theme]
+name = "bad-wolf"
+
+[theme.overrides]
+idle_bg = "#1b2631" 
+#info_bg = "#633974"
+info_bg = "#1b2631"
+info_fg = "#ffffff"
+warning_bg = "#a94b00"
+warning_fg = "#ffffff"
+
+[icons]
+name = "awesome"
+
+[icons.overrides]
+update = "  "
+
+[[block]]
+block = "pacman"
+interval = 240
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+unit = "GB"
+interval = 45
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+info = 65
+warning = 80
+critical = 90
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization}%"
+info = 65
+warning = 80
+critical = 90
+
+[[block]]
+block = "temperature"
+collapsed = false
+format = "{average}°"
+chip = "*-isa-*"
+interval = 5
+
+[[block]]
+block = "load"
+format = "{1m}"
+interval = 1
+info = 4.5
+warning = 6
+critical = 8.5
+
+[[block]]
+block = "time"
+format = "%d|%m %R"
+interval = 60

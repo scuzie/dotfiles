@@ -1,0 +1,58 @@
+add_newline = true 
+
+prompt_order = [
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_status",
+    "package",
+    "line_break",
+    "character"
+]
+
+[character]
+symbol = "λ ›"
+vicmd_symbol = "λ ·"
+style_success = "white"
+style_failure = "red"
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+style = "purple"
+
+[git_branch]
+symbol = " "
+style = "blue"
+
+[git_status]
+style = "green"
+
+[golang]
+symbol = " "
+disabled = true
+
+[elixir]
+symbol = "🔮"
+disabled = true
+
+[java]
+symbol = " "
+disabled = true
+
+[package]
+symbol = " "
+disabled = true
+
+[python]
+symbol = " "
+disabled = true
+
+[rust]
+symbol = " "
+disabled = true
+
+scan_timeout = 10

@@ -1,0 +1,6 @@
+rofi.modi: drun
+rofi.lines: 2
+rofi.columns: 1 
+rofi.drun-icon-theme: Pop
+rofi.show-icons: true
+rofi.theme: onedark 

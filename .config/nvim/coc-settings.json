@@ -1,0 +1,28 @@
+{
+  "rust-analyzer.serverPath": "~/.local/bin/rust-analyzer",
+  "rust-analyzer.updates.channel": "nightly",
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.rustfmt.overrideCommand": ["cargo +nightly fmt --all"],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".git/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "elixirLS": {
+      "command": "~/.config/elixir-ls/language_server.sh",
+      "rootPatterns": ["mix.exs", ".git/"],
+      "filetypes": ["elixir", "eelixir"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}

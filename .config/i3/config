@@ -1,0 +1,175 @@
+# set mod key
+set $mod Mod1
+
+# workspace definitions
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# i3-gaps
+gaps inner 10
+gaps outer 5
+
+smart_gaps on
+smart_borders no_gaps
+
+hide_edge_borders smart
+
+# change window focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# change container layout
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
+
+# set splitting orientation
+bindsym $mod+o split h
+bindsym $mod+i split v
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# start a new terminal instance
+bindsym $mod+Return exec $TERMINAL
+
+# hide window title bars
+new_window pixel 2
+
+# font for window titles
+font pango: SpaceMono Nerd Font Mono Medium 8
+
+# kill focused window
+bindsym $mod+q kill
+
+# set focused window to fullscreen mode
+bindsym $mod+f fullscreen global
+
+# use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# let focus follow the mouse
+focus_follows_mouse yes
+
+# start rofi launcher
+bindsym $mod+d exec --no-startup-id "rofi -show drun"
+
+# bind screenshot utility
+bindsym Print exec "maim -s | xclip -selection clipboard -silent"
+bindsym --release Shift+Print exec "maim $PICTURES/$(date +%s).png | xclip -selection clipboard -silent"
+
+# music control
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
+bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+
+# colors
+set $light  #ffffff
+set $orange #a94b00
+set $marine #17202a
+set $pink   #9d00ff
+set $cyan   #8be9fd
+
+client.focused          $light $light $light $light
+client.focused_inactive $light $light $light $light 
+client.unfocused        $light $light $light $light
+client.urgent           $light $pink  $light $light
+
+# resize focused client
+mode "resize" {
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width width 5 px or 5 ppt
+
+    # switch back to normal
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# bind "power mode"
+mode "$power" {
+    bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/power.sh lock
+    bindsym s mode "default", exec --no-startup-id $HOME/.config/i3/power.sh shutdown
+    bindsym r mode "default", exec --no-startup-id $HOME/.config/i3/power.sh reboot
+
+    # switch back to normal
+    bindsym Escape mode "default"
+}
+
+set $power #
+bindsym $mod+Shift+x mode "$power"
+
+# status configuration
+bar {
+    verbose yes
+    tray_output none
+    font pango: monospace, Hack 12
+    strip_workspace_numbers yes
+    position bottom
+    status_command /usr/local/bin/i3status-rs $HOME/.config/i3/status.toml
+    #status_command /usr/bin/i3blocks -c $HOME/.config/i3blocks/config
+
+    colors {
+        background          $marine     
+        focused_workspace   $orange   $orange   $light
+        active_workspace    $orange   $orange   $light
+        inactive_workspace  $marine   $marine   $light
+        urgent_workspace    $magenta  $magenta  $light
+    }
+}
+
+# reload the config file
+bindsym $mod+Control+r reload
+
+# restart i3 in-place
+bindsym $mod+Shift+r restart
+
+# composition manager
+exec_always --no-startup-id picom -bc
+
+# notification service
+exec_always --no-startup-id dunst
+
+# load wallpaper
+exec_always --no-startup-id feh --bg-fill $PICTURES/serenity.png
