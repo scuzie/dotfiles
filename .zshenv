@@ -1,6 +1,7 @@
 # ndless
 export PATH="$HOME/Coding/nspire/Ndless/ndless-sdk/toolchain/install/bin:$HOME/Coding/nspire/Ndless/ndless-sdk/toolchain/../bin:${PATH}"
 
+# path
 export PATH="$PATH:/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin"
 
 # zsh

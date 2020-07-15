@@ -137,7 +137,7 @@ mode "$power" {
     bindsym Escape mode "default"
 }
 
-set $power #
+set $power +/-
 bindsym $mod+Shift+x mode "$power"
 
 # status configuration

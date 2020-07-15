@@ -67,7 +67,13 @@ source "$HOME/.fzf/shell/key-bindings.zsh"
 
 source $ZSH/oh-my-zsh.sh
 
+# starship theme
 eval "$(starship init zsh)"
 
-# added by travis gem
-[ ! -s /home/d33vil/.travis/travis.sh ] || source /home/d33vil/.travis/travis.sh
+# travis ci 
+[ ! -s $HOME/.travis/travis.sh ] || source $HOME/.travis/travis.sh
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
