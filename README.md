@@ -67,7 +67,7 @@ Clone this repository and cherry-pick the parts you like.
 #### Filesystem
 
 In case you want to use my dotfiles, remember that the given repository structure is **NOT** identical 
-to your local directory tree. In case you are wondering; this is how it ***could*** look like.
+to your local directory tree. In case you are wondering; this is how it *could* look like.
 
 ```bash
 /
