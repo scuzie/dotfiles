@@ -18,17 +18,19 @@
 
 <details>
     <summary><a href="https://github.com/alacritty/alacritty">Alacritty</a> and <a href="https://github.com/zsh-users/zsh">Zsh</a> including <a href="https://github.com/ohmyzsh/ohmyzsh">oh-my-zsh</a> & <a href="https://github.com/starship/starship">starship</a></summary>
-    <p><img src="screenshots/desktop.png"></p>
+    <p><img src="screenshots/zsh.png"></p>
 </details>
 
 <details>
     <summary><a href="https://github.com/Airblader/i3">i3-gaps</a> window manager and <a href="https://github.com/greshake/i3status-rust">i3status-rust</a> bar</summary>
-    <p><img src="screenshots/desktop.png"></p>
+    <p><img src="screenshots/i3.png"></p>
 </details>
 
 <details>
     <summary><a href="https://github.com/neovim/neovim">Neovim</a> using <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a></summary>
-    <p><img src="screenshots/desktop.png"></p>
+    <p><img src="screenshots/nvim.png"></p>
+    <p><img src="screenshots/code.png"></p>
+    <p><img src="screenshots/nvim_tiling.png"></p>
 </details>
 
 <details>
