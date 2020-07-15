@@ -17,7 +17,7 @@
 ## Preview
 
 <details>
-    <summary><a href="https://github.com/zsh-users/zsh">Zsh</a> including <a href="https://github.com/ohmyzsh/ohmyzsh">oh-my-zsh</a> & <a href="https://github.com/starship/starship">starship</a></summary>
+    <summary><a href="https://github.com/alacritty/alacritty">Alacritty</a> and <a href="https://github.com/zsh-users/zsh">Zsh</a> including <a href="https://github.com/ohmyzsh/ohmyzsh">oh-my-zsh</a> & <a href="https://github.com/starship/starship">starship</a></summary>
     <p><img src="screenshots/desktop.png"></p>
 </details>
 
@@ -42,16 +42,20 @@
 
 ~ | description
 --|------------
-[feh](https://github.com/derf/feh) | image viewer
+[exa](https://github.com/ogham/exa) | a modern version of ls
 [vivid](https://github.com/sharkdp/vivid) | LS_COLORS generator
-[bat](https://github.com/sharkdp/bat) cat(1) | clone with wings
-[dunst](https://github.com/dunst-project/dunst) | notifcation daemon
+[bat](https://github.com/sharkdp/bat) | cat(1) clone with wings
+[fzf](https://github.com/junegunn/fzf) | a command-line fuzzy finder
 
 #### WM related
 
 ~ | description
 --|------------
+[lightdm](https://github.com/canonical/lightdm) | cross-desktop display manager
 [picom](https://github.com/yshui/picom) | lightweight compositor for X11
+[playerctl](https://github.com/altdesktop/playerctl) | mpris command-line controller
+[dunst](https://github.com/dunst-project/dunst) | customizable notifcation daemon
+[feh](https://github.com/derf/feh) | a fast and lightweight image viewer
 
 ## Installation
 
