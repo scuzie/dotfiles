@@ -1,0 +1,121 @@
+env:
+  TERM: alacritty
+
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  padding:
+    x: 0
+    y: 0
+
+  dynamic_padding: false
+  decorations: full
+  startup_mode: Windowed
+  dynamic_title: false
+
+scrolling:
+  history: 0
+  multiplier: 1
+
+font:
+  normal:
+    family: monospace 
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+  
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+
+  size: 11.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  scale_with_dpi: true
+
+draw_bold_text_with_bright_colors: true
+
+schemes:
+  falcon: &falcon
+    primary:
+      #background: '0x020221'
+      background: '0x000000'  
+      #background: '0x17202a'
+      foreground: '0xb4b4b9'
+    cursor:
+      text:       '0x020221'
+      cursor:     '0xffe8c0'
+    normal:
+      black:      '0x000004'
+      red:        '0xff3600'
+      green:      '0x718e3f'
+      yellow:     '0xffc552'
+      blue:       '0x635196'
+      magenta:    '0xff761a'
+      cyan:       '0x34bfa4'
+      white:      '0xb4b4b9'
+    bright:   
+      black:      '0x020221'
+      red:        '0xff8e78'
+      green:      '0xb1bf75'
+      yellow:     '0xffd392'
+      blue:       '0x99a4bc'
+      magenta:    '0xffb07b'
+      cyan:       '0x8bccbf'
+      white:      '0xf8f8ff'
+  
+colors: *falcon
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+
+background_opacity: 1.0
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+cursor:
+  style: Block
+  blinking: Never
+  vi_mode_style: Block
+  unfocused_hollow: true
+  thickness: 0.15
+
+live_config_reload: true
+
+shell:
+  program: /bin/bash
+
+working_directory: None
+
+alt_send_esc: true
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+  hide_when_typing: false
+  
+modifiers: None
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+key_bindings:
+  - { key: V,        mods: Control, action: Paste            }
+  - { key: C,        mods: Control, action: Copy             }

@@ -1,0 +1,34 @@
+[alias]
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    s = status -s
+    c = clone --recursive
+  
+[apply]
+    whitespace = fix
+
+[commit]
+    gpgsign = true
+
+[color]
+    ui = auto
+    interactive = auto 
+
+[core]
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='DarkNeon'
+    untrackedCache = true  
+    ignorecase = false
+    autocrlf = false
+    safecrlf = false
+    eol = native
+
+[interactive]
+    diffFilter = delta --color-only
+
+[diff]
+    renames = copies
+
+[fetch]
+    prune = true
+
+[protocol]
+    version = 2

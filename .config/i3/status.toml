@@ -1,0 +1,62 @@
+[theme]
+name = "slick"
+
+[theme.overrides]
+idle_bg = "#333333"
+idle_fg = "#ffffff"
+info_bg = "#333333"
+info_fg = "#ffffff"
+warning_bg = "#333333"
+warning_fg = "#ffffff"
+critical_bg = "#333333"
+critical_fg = "#ffffff"
+good_bg = "#333333"
+good_fg = "#ffffff"
+alternating_tint_bg = "#333333"
+alternating_tint_fg = "#ffffff"
+separator_bg = "#333333"
+separator_fg = "#333333"
+
+[icons]
+name = "none"
+
+[[block]]
+block = "net"
+device = "enp4s0"
+format = "{ip} {speed_up;K*b} {speed_down;K*b}"
+interval = 5
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+unit = "GB"
+interval = 60
+
+[[block]]
+block = "memory"
+clickable = true
+format_mem = "{mem_used_percents}"
+display_type = "memory"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization} {frequency}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+format = "{average}"
+chip = "*-isa-*"
+interval = 5
+
+[[block]]
+block = "load"
+format = "{1m}"
+interval = 1
+
+[[block]]
+block = "time"
+format = "%d/%m %R"
+interval = 30
