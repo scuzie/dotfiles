@@ -5,6 +5,11 @@ window:
   dimensions:
     columns: 0
     lines: 0
+  
+  position:
+    x: 0
+    y: 0
+  
   padding:
     x: 0
     y: 0
@@ -14,9 +19,11 @@ window:
   startup_mode: Windowed
   dynamic_title: false
 
+  gtk_theme_variant: None
+
 scrolling:
-  history: 0
-  multiplier: 1
+  history: 10000
+  multiplier: 2
 
 font:
   normal:
@@ -45,44 +52,105 @@ font:
     x: 0
     y: 0
 
-  scale_with_dpi: true
+  use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: true
 
 schemes:
+  afterflow: &afterglow
+    primary:
+      background: '#2c2c2c'
+      foreground: '#d6d6d6'
+      dim_foreground:    '#dbdbdb'
+      bright_foreground: '#d9d9d9'
+      dim_background:    '#202020'
+      bright_background: '#3a3a3a'
+    cursor:
+      text:   '#2c2c2c'
+      cursor: '#d9d9d9'
+    normal:
+      black:   '#1c1c1c'
+      red:     '#bc5653'
+      green:   '#909d63'
+      yellow:  '#ebc17a'
+      blue:    '#7eaac7'
+      magenta: '#aa6292'
+      cyan:    '#86d3ce'
+      white:   '#cacaca'
+    bright:
+      black:   '#636363'
+      red:     '#bc5653'
+      green:   '#909d63'
+      yellow:  '#ebc17a'
+      blue:    '#7eaac7'
+      magenta: '#aa6292'
+      cyan:    '#86d3ce'
+      white:   '#f7f7f7'
+    dim:
+      black:   '#232323'
+      red:     '#74423f'
+      green:   '#5e6547'
+      yellow:  '#8b7653'
+      blue:    '#556b79'
+      magenta: '#6e4962'
+      cyan:    '#5c8482'
+      white:   '#828282'
   falcon: &falcon
     primary:
-      #background: '0x020221'
-      background: '0x000000'  
-      #background: '0x17202a'
-      foreground: '0xb4b4b9'
+      #background: '#020221'
+      background: '#000000'  
+      #background: '#17202a'
+      foreground: '#b4b4b9'
     cursor:
-      text:       '0x020221'
-      cursor:     '0xffe8c0'
+      text:       '#020221'
+      cursor:     '#ffe8c0'
     normal:
-      black:      '0x000004'
-      red:        '0xff3600'
-      green:      '0x718e3f'
-      yellow:     '0xffc552'
-      blue:       '0x635196'
-      magenta:    '0xff761a'
-      cyan:       '0x34bfa4'
-      white:      '0xb4b4b9'
+      black:      '#000004'
+      red:        '#ff3600'
+      green:      '#718e3f'
+      yellow:     '#ffc552'
+      blue:       '#635196'
+      magenta:    '#ff761a'
+      cyan:       '#34bfa4'
+      white:      '#b4b4b9'
     bright:   
-      black:      '0x020221'
-      red:        '0xff8e78'
-      green:      '0xb1bf75'
-      yellow:     '0xffd392'
-      blue:       '0x99a4bc'
-      magenta:    '0xffb07b'
-      cyan:       '0x8bccbf'
-      white:      '0xf8f8ff'
-  
-colors: *falcon
+      black:      '#020221'
+      red:        '#ff8e78'
+      green:      '#b1bf75'
+      yellow:     '#ffd392'
+      blue:       '#99a4bc'
+      magenta:    '#ffb07b'
+      cyan:       '#8bccbf'
+      white:      '#f8f8ff'
+  nord: &nord
+   primary:
+     background: '#2E3440'
+     foreground: '#D8DEE9' 
+   normal:
+     black:   '#3B4252'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#88C0D0'
+     white:   '#E5E9F0'
+   bright:
+     black:   '#4C566A'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#8FBCBB'
+     white:   '#ECEFF4'
+
+colors: *nord
 
 bell:
   animation: EaseOutExpo
   duration: 0
+  color: '#ffffff'
 
 background_opacity: 1.0
 
@@ -91,9 +159,11 @@ selection:
   save_to_clipboard: true
 
 cursor:
-  style: Block
-  blinking: Never
-  vi_mode_style: Block
+  style: 
+    shape: Block
+    blinking: Off
+  
+  vi_mode_style: None
   unfocused_hollow: true
   thickness: 0.15
 
@@ -101,6 +171,8 @@ live_config_reload: true
 
 shell:
   program: /bin/bash
+  args:
+    - --login  
 
 working_directory: None
 

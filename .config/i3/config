@@ -110,7 +110,7 @@ set $pink   #9d00ff
 set $cyan   #8be9fd
 set $grey   #333333
 
-client.focused          $light $light  $light $light
+client.focused          $light $cyan   $light $light
 client.focused_inactive $light $light  $light $light 
 client.unfocused        $light $light  $light $light
 client.urgent           $light $orange $light $light
