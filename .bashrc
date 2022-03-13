@@ -1,5 +1,3 @@
-export GPG_TTY=$(tty)
-
 alias rm="rm -f"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
